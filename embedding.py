@@ -4,8 +4,8 @@ from transformers import BertTokenizerFast, TFBertModel #BertTokenizer
 
 ##### SENTENCE BERT
 
-def load_embedding_model():
-    sentence_bert_model = SentenceTransformer('bert-base-nli-mean-tokens') #roberta-large-nli-stsb-mean-tokens
+def load_embedding_model(embedding_type='bert-base-nli-mean-tokens'):
+    sentence_bert_model = SentenceTransformer(embedding_type)
     return sentence_bert_model
 
 def embed_batch(df, sentence_bert_model):
